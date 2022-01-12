@@ -9,7 +9,7 @@ function repeat() {
     document.getElementById("globalmsgs").innerText = "";
     
     for (let i = 0; i < d.length; i++) {
-      document.getElementById("globalmsgs").innerHTML += "<div class='msg'><b><font color="+d[i].color+">" + string(d[i].user) + ": </font></b>" + string(d[i].msg) + "</div>";
+      document.getElementById("globalmsgs").innerHTML += "<div class='msg'><b><font color="+d[i].color+">" + String(d[i].user) + ": </font></b>" + String(d[i].msg) + "</div>";
     }
   }
   })
