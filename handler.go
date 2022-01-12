@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -78,7 +79,15 @@ func postmsg(c *gin.Context) {
 	user := session.Get(username)
 	color := session.Get(ucolor)
 
-	data := message{fmt.Sprint(user), c.PostForm("usermessage"), fmt.Sprint(color)}
+	umessage := c.PostForm("usermessage")
+
+	if strings.Contains(umessage, "<script>") && strings.Contains(umessage, "</script>") {
+		umessage = "Nice try :)"
+	} else if strings.Contains(umessage, "<img>") && strings.Contains(umessage, "</img>") {
+		umessage = "//Images not allowed//"
+	}
+
+	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color)}
 
 	addMsg(data)
 
