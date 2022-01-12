@@ -85,6 +85,8 @@ func postmsg(c *gin.Context) {
 		umessage = "Nice try :)"
 	} else if strings.Contains(umessage, "<img>") && strings.Contains(umessage, "</img>") {
 		umessage = "//Images not allowed//"
+	} else if strings.Contains(umessage, "<") && strings.Contains(umessage, "</") {
+		umessage = "//HTML tags are not allowed//"
 	}
 
 	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color)}
