@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div id="loginbox">
+        <div id="banner">
+            <h1>Global Chat</h1>
+        </div>
+        <form action="/auth" method="post">
+            <div id="username">Username:</div>
+            <div><input id="userbox" type="text" name="user"></div>
+            <div style="margin-top: 3px;">
+                <label for="Color" style="font-size:medium;"><b>Color:</b></label>
+                <select name="Color" id="colors" style="color: white;">
+                    <b>
+                        <option value="white" style="color: white;">White</option>
+                        <option value="red" style="color: red;">Red</option>
+                        <option value="blue" style="color: blue;">Blue</option>
+                        <option value="green" style="color: green;">Green</option>
+                        <option value="yellow" style="color: yellow;">Yellow</option>
+                        <option value="cyan" style="color: cyan;">Cyan</option>
+                        <option value="purple" style="color: purple;">Purple</option>
+                    </b>
+                </select>
+                <input id="submit" type="submit" value="Enter">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

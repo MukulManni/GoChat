@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    color: white;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+#loginbox {
+    position: absolute;
+    left: 40%;
+}
+
+#username {
+    color: grey;
+    font-size: 23px;
+}
+
+#userbox {
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 0px 0px;
+    border: 0px;
+    background-color: #444;
+}
+
+#submit {
+    border: 0px;
+    font-size: medium;
+    box-shadow: 0px 0px 0px;
+}
+
+#colors {
+    background-color: black;
+    font-size: medium;
+}
+
+input:focus {
+    outline: none;
+}

@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+    color: white;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+.msg {
+    font-size: medium;
+}
+
+#userbox {
+    color: white;
+    font-size: medium;
+    box-shadow: 0px 0px 0px;
+    border: 0px;
+    background-color: #444;
+}
+
+#submit {
+    border: 0px;
+    font-size: medium;
+    box-shadow: 0px 0px 0px;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}

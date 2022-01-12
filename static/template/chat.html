@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/chat.css">
+    <title>Chat</title>
+</head>
+
+<body>
+    <div id="banner">
+        <center>
+            <h1>Global Chat</h1>
+        </center>
+    </div>
+
+    <div id="globalmsgs">
+        {{range .msgList}}
+        <div class="msg">
+            <font color={{.Color}}><b>{{.User}}:</b></font> {{.Msg}}
+        </div>
+        {{end}}
+    </div>
+
+    <div id="chatbox" style="font-size: medium;">
+        <form action="/u/chat" method="post">
+                <font color={{.color}}><b>{{.user}}:</b></font>
+                <input id="userbox" type="text" name="usermessage" placeholder="Type Here..." autofocus>
+                <input id="submit" type="submit" value="Go">
+        </form>
+    </div>
+</body>
+<script type="text/javascript" src="js/script.js"></script>
+
+</html>
