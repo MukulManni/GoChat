@@ -28,6 +28,16 @@ func auth(c *gin.Context) {
 	user := c.PostForm("user")
 	color := c.PostForm("Color")
 
+	if strings.Contains(user, "<") || strings.Contains(user, ">") {
+		c.HTML(
+			http.StatusOK,
+			"login.html",
+			gin.H{
+				"error": "Use a valid username",
+			},
+		)
+	}
+
 	session := sessions.Default(c)
 
 	session.Set(username, user)
@@ -81,11 +91,7 @@ func postmsg(c *gin.Context) {
 
 	umessage := c.PostForm("usermessage")
 
-	if strings.Contains(umessage, "<script>") && strings.Contains(umessage, "</script>") {
-		umessage = "Nice try :)"
-	} else if strings.Contains(umessage, "<img>") && strings.Contains(umessage, "</img>") {
-		umessage = "//Images not allowed//"
-	} else if strings.Contains(umessage, "<") && strings.Contains(umessage, "</") {
+	if strings.Contains(umessage, "<") && strings.Contains(umessage, ">") {
 		umessage = "//HTML tags are not allowed//"
 	}
 
