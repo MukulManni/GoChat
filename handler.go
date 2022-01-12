@@ -36,6 +36,7 @@ func auth(c *gin.Context) {
 				"error": "Use a valid username",
 			},
 		)
+		return
 	}
 
 	session := sessions.Default(c)
