@@ -15,7 +15,7 @@ func main() {
 	r = gin.Default()
 	r.LoadHTMLGlob("static/template/*")
 
-	r.Use(sessions.Sessions("mysession", sessions.NewCookieStore([]byte("secret"))))
+	r.Use(sessions.Sessions("chatsession", sessions.NewCookieStore([]byte("secret"))))
 
 	intializeRoutes()
 
