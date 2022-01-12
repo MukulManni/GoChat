@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 )
@@ -9,7 +11,7 @@ var r *gin.Engine
 
 func main() {
 
-	//port := os.Getenv("PORT")
+	port := os.Getenv("PORT")
 	r = gin.Default()
 	r.LoadHTMLGlob("static/template/*")
 
@@ -17,5 +19,5 @@ func main() {
 
 	intializeRoutes()
 
-	r.Run(":8080")
+	r.Run(":" + port)
 }
