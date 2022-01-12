@@ -32,7 +32,7 @@
         <form action="/u/chat" method="post">
                 <font color={{.color}}><b>{{.user}}:</b></font>
                 <input id="userbox" type="text" name="usermessage" placeholder="Type Here..." autofocus>
-                <input id="submit" type="submit" value="Go">
+                <input id="submit" type="submit" onsubmit="repeat()" value="Go">
         </form>
     </div>
 </body>

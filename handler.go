@@ -99,8 +99,6 @@ func postmsg(c *gin.Context) {
 	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color)}
 
 	addMsg(data)
-
-	c.Redirect(http.StatusFound, "/u/chat")
 }
 
 func jsonmsg(c *gin.Context) {
