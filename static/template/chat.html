@@ -29,10 +29,10 @@
     </div>
 
     <div id="chatbox" style="font-size: medium;">
-        <form action="/u/chat" method="post">
+        <form action="/u/chat" method="post" onsubmit="repeat()">
                 <font color={{.color}}><b>{{.user}}:</b></font>
                 <input id="userbox" type="text" name="usermessage" placeholder="Type Here..." autofocus>
-                <input id="submit" type="submit" onsubmit="repeat()" value="Go">
+                <input id="submit" type="submit" value="Go">
         </form>
     </div>
 </body>
