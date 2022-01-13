@@ -92,12 +92,12 @@ func postmsg(c *gin.Context) {
 
 	umessage := c.PostForm("usermessage")
 
-	if strings.ContainsAny(umessage, "< | > | ] | [ | \\ | /") {
-		umessage = "Nice try."
-	}
+	//if strings.ContainsAny(umessage, "< | > | ] | [ | \\ | /") {
+	//	umessage = "Nice try."
+	//}
 
-	strings.ReplaceAll(umessage, "'", "")
-	strings.ReplaceAll(umessage, "\"", "")
+	//strings.ReplaceAll(umessage, "'", "")
+	//strings.ReplaceAll(umessage, "\"", "")
 
 	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color)}
 

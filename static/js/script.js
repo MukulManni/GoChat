@@ -1,7 +1,13 @@
 var tmp = 0;
 
+var lt = /</g, 
+    gt = />/g, 
+    ap = /'/g, 
+    ic = /"/g;
+value = value.toString().replace(lt, "&lt;").replace(gt, "&gt;").replace(ap, "&#39;").replace(ic, "&#34;");
+
 function repeat() {
-  fetch("https://go-chatters.herokuapp.com/u/msglist").then(res => res.json()).then(d => {
+  fetch("http://localhost:8080/u/msglist").then(res => res.json()).then(d => {
 
     if (d.length > tmp) {
       tmp = d.length;
@@ -16,10 +22,3 @@ function repeat() {
 }
 
 tmpinterval = setInterval(repeat, 3000);
-
-function jsEscape(str) {
-  return String(str).replace(/[^\w. ]/gi, function (c) {
-    return '\\u' + ('0000' + c.charCodeAt(0).toString(16)).slice(-4);
-  });
-
-}
