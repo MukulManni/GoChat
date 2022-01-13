@@ -7,7 +7,7 @@ type message struct {
 	Time  string `json:"time"`
 }
 
-var globalmsgList = []message{{"Mod", "Welcome to the global chat.", "red", "[00:00:00]"}}
+var globalmsgList = []message{{"Mod", "Welcome to the global chat.", "red", "[00:00:00] "}}
 
 func getAllMsgs() []message {
 	return globalmsgList

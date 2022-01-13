@@ -94,7 +94,7 @@ func postmsg(c *gin.Context) {
 
 	umessage := c.PostForm("usermessage")
 
-	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color), time.Format("[15:04:05]")}
+	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color), time.Format("[15:04:05] ")}
 
 	addMsg(data)
 
