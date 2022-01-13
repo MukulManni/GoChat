@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -89,10 +90,11 @@ func postmsg(c *gin.Context) {
 	session := sessions.Default(c)
 	user := session.Get(username)
 	color := session.Get(ucolor)
+	time := time.Now()
 
 	umessage := c.PostForm("usermessage")
 
-	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color)}
+	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color), time.Format("[15:04:05]")}
 
 	addMsg(data)
 

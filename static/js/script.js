@@ -6,7 +6,7 @@ var lt = /</g,
     ic = /"/g;
 
 function repeat() {
-  fetch("https://go-chatters.herokuapp.com/u/msglist").then(res => res.json()).then(d => {
+  fetch("http://localhost:8080/u/msglist").then(res => res.json()).then(d => {
 
     if (d.length > tmp) {
       tmp = d.length;
@@ -17,7 +17,7 @@ function repeat() {
         d[i].msg = d[i].msg.toString().replace(lt, "&lt;").replace(gt, "&gt;").replace(ap, "&#39;").replace(ic, "&#34;");
         d[i].user = d[i].user.toString().replace(lt, "&lt;").replace(gt, "&gt;").replace(ap, "&#39;").replace(ic, "&#34;");
         
-        document.getElementById("globalmsgs").innerHTML += "<div class='msg'><b><font color=" + d[i].color + ">" + d[i].user + ": </font></b>" + d[i].msg + "</div>";
+        document.getElementById("globalmsgs").innerHTML += "<div class='msg'><b><font color=" + d[i].color + ">" + d[i].time + d[i].user + ": </font></b>" + d[i].msg + "</div>";
       }
     }
   });
