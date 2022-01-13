@@ -94,9 +94,13 @@ func postmsg(c *gin.Context) {
 
 	umessage := c.PostForm("usermessage")
 
-	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color), time.Format("[15:04:05] ")}
+	data, err := addMsgtoDB(db, fmt.Sprint(user), umessage, fmt.Sprint(color), time.Format("[15:04:05] "))
 
-	addMsg(data)
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"Error": "Unable to add message to database"})
+	}
+
+	addMsg(*data)
 
 	c.Redirect(http.StatusFound, "/u/chat")
 }
