@@ -92,8 +92,8 @@ func postmsg(c *gin.Context) {
 
 	umessage := c.PostForm("usermessage")
 
-	if strings.Contains(umessage, "<") || strings.Contains(umessage, ">") || strings.Contains(umessage, "[") || strings.Contains(umessage, "]") || strings.Contains(umessage, "\\") || strings.Contains(umessage, "/") {
-		umessage = "//Tried XSS and failed//"
+	if strings.Contains(umessage, "<") || strings.Contains(umessage, ">") || strings.Contains(umessage, "[") || strings.Contains(umessage, "]") || strings.Contains(umessage, "\\") || strings.Contains(umessage, "/") || strings.Contains(umessage, ":") || strings.Contains(umessage, ")") || strings.Contains(umessage, "(") {
+		umessage = "It's secure"
 	}
 
 	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color)}
