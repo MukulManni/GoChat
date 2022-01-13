@@ -6,7 +6,7 @@ var lt = /</g,
     ic = /"/g;
 
 function repeat() {
-  fetch("http://localhost:8080/u/msglist").then(res => res.json()).then(d => {
+  fetch("https://go-chatters.herokuapp.com/u/msglist").then(res => res.json()).then(d => {
 
     if (d.length > tmp) {
       tmp = d.length;
