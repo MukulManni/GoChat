@@ -93,7 +93,7 @@ func postmsg(c *gin.Context) {
 	umessage := c.PostForm("usermessage")
 
 	if strings.Contains(umessage, "<") || strings.Contains(umessage, ">") || strings.Contains(umessage, "[") || strings.Contains(umessage, "]") || strings.Contains(umessage, "\\") || strings.Contains(umessage, "/") || strings.Contains(umessage, ":") || strings.Contains(umessage, ")") || strings.Contains(umessage, "(") {
-		umessage = "It's secure"
+		umessage = "It is secured"
 	}
 
 	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color)}
