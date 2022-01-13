@@ -92,13 +92,15 @@ func postmsg(c *gin.Context) {
 
 	umessage := c.PostForm("usermessage")
 
-	if strings.Contains(umessage, "<") && strings.Contains(umessage, ">") {
-		umessage = "//HTML tags are not allowed//"
+	if strings.Contains(umessage, "<") || strings.Contains(umessage, ">") || strings.Contains(umessage, "[") || strings.Contains(umessage, "]") || strings.Contains(umessage, "\\") || strings.Contains(umessage, "/") {
+		umessage = "//Tried XSS and failed//"
 	}
 
 	data := message{fmt.Sprint(user), umessage, fmt.Sprint(color)}
 
 	addMsg(data)
+
+	c.Redirect(http.StatusFound, "/u/msg")
 }
 
 func jsonmsg(c *gin.Context) {
