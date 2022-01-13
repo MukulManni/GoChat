@@ -17,11 +17,6 @@ function repeat() {
 
 tmpinterval = setInterval(repeat, 3000);
 
-function lol(){
-  clearInterval(tmpinterval);
-  tmpinterval = setInterval(repeat, 3000);
-}
-
 function jsEscape(str) {
   return String(str).replace(/[^\w. ]/gi, function (c) {
     return '\\u' + ('0000' + c.charCodeAt(0).toString(16)).slice(-4);
