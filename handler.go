@@ -29,7 +29,7 @@ func auth(c *gin.Context) {
 	user := c.PostForm("user")
 	color := c.PostForm("Color")
 
-	if strings.Contains(user, "<") || strings.Contains(user, ">") {
+	if strings.Contains(user, "<") || strings.Contains(user, ">") || user == "" {
 		c.HTML(
 			http.StatusOK,
 			"login.html",
