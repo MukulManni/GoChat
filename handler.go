@@ -100,7 +100,7 @@ func postmsg(c *gin.Context) {
 
 	addMsg(data)
 
-	c.Redirect(http.StatusFound, "/u/msg")
+	c.Redirect(http.StatusFound, "/u/chat")
 }
 
 func jsonmsg(c *gin.Context) {
