@@ -8,6 +8,7 @@ import (
 
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
+	_ "github.com/lib/pq"
 )
 
 const (

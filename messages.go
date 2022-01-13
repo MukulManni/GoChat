@@ -1,6 +1,10 @@
 package main
 
-import "database/sql"
+import (
+	"database/sql"
+
+	_ "github.com/lib/pq"
+)
 
 type message struct {
 	User  string `json:"user"`
