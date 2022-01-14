@@ -38,7 +38,7 @@ func connectDB(dbURL string) (*sql.DB, error) {
 
 	_, err = db.Exec(`
     CREATE TABLE IF NOT EXISTS messages (
-      user VARCHAR(64) NOT NULL,
+      user VARCHAR(64),
 	  msg VARCHAR(100),
 	  color VARCHAR(10),
 	  time VARCHAR(10),
