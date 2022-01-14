@@ -38,7 +38,7 @@ func connectDB(dbURL string) (*sql.DB, error) {
 
 	_, err = db.Exec(`
     CREATE TABLE IF NOT EXISTS messages (
-      user VARCHAR(64),
+      username VARCHAR(64),
 	  msg VARCHAR(100),
 	  color VARCHAR(10),
 	  time VARCHAR(10),
@@ -57,7 +57,7 @@ func addMsgtoDB(db *sql.DB, user string, msg string, color string, time string) 
 	created := message{}
 
 	row := db.QueryRow(
-		`INSERT INTO messages (user,msg,color,time) VALUES ($1,$2,$3,$4) RETURNING user, msg, color, time`,
+		`INSERT INTO messages (username,msg,color,time) VALUES ($1,$2,$3,$4) RETURNING username, msg, color, time`,
 		user, msg, color, time,
 	)
 
